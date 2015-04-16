@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/gray"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:background="@color/black">
+        
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="90dp"
+            android:layout_height="44dp"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:drawableLeft="@drawable/btn_back_normal"
+            android:drawablePadding="-20dp"
+            android:paddingLeft="12dp"
+            android:text="返回"
+            android:textColor="@color/white"
+            android:textSize="@dimen/navbar_button_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="产权审核"
+            android:textColor="@color/white"
+            android:textSize="@dimen/navbar_button_text_size" />
+
+        <Button
+            android:id="@+id/main_activity_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@drawable/home"
+            android:text="" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="产权人" />
+
+            <TextView
+                android:id="@+id/property_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="产权证号" />
+
+        <TextView
+            android:id="@+id/property_cert_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="none" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="身份证号" />
+
+        <TextView
+            android:id="@+id/identification_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="none" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电话" />
+
+        <TextView
+            android:id="@+id/telephone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="none" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="使用性质" />
+
+        <TextView
+            android:id="@+id/purpose_use"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="none" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="面积" />
+
+        <TextView
+            android:id="@+id/area_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="none" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="地址" />
+
+        <TextView
+            android:id="@+id/area_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="none" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="审核意见" />
+
+        <EditText
+            android:id="@+id/audit_opinion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:ems="10"
+            android:lines="4"
+            android:inputType="textMultiLine" >
+
+            <requestFocus />
+        </EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/access_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="通过" />
+
+        <Button
+            android:id="@+id/not_access_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="不通过" />
+
+    </LinearLayout>
+
+</LinearLayout>

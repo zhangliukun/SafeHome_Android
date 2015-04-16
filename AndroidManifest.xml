@@ -33,6 +33,23 @@
             android:launchMode="singleTask"
              >
         </activity>
+        
+        <activity
+            android:name="cn.zalezone.ui.PropertyVerityActivity"
+            android:launchMode="singleTask"
+             >
+        </activity>
+        
+        <activity
+            android:name="cn.zalezone.ui.HouseActivity"
+            android:launchMode="singleTask"
+             >
+        </activity>
+         <activity
+            android:name="cn.zalezone.ui.LookHouseActivity"
+            android:launchMode="singleTask"
+             >
+        </activity>
     </application>
 
 </manifest>

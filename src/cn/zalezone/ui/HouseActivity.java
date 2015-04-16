@@ -2,21 +2,27 @@ package cn.zalezone.ui;
 
 import java.util.ArrayList;
 
-import cn.zalezone.domian.HouseInfo;
-import cn.zalezone.safehome_android.R;
-import cn.zalezone.ui.adapter.PropertyInfoVertifyListAdapter;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
+import cn.zalezone.domian.HouseInfo;
+import cn.zalezone.safehome_android.R;
+import cn.zalezone.ui.adapter.PropertyInfoVertifyListAdapter;
 
-public class PropertyActivity extends BaseActivity {
+
+/**
+ * 房屋审核搜索页面
+ * @author zlk
+ *
+ */
+
+public class HouseActivity extends BaseActivity {
 
 	EditText searchHouseNumber;
 	Button backButton;
@@ -39,8 +45,6 @@ public class PropertyActivity extends BaseActivity {
 
 	@Override
 	public void initUI() {
-		
-		
 		
 		searchHouseNumber = (EditText) findViewById(R.id.edit_search_homenumber);
 		searchButton = (Button) findViewById(R.id.button_search);
@@ -69,6 +73,7 @@ public class PropertyActivity extends BaseActivity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
+				
 			}
 		});
 
