@@ -50,6 +50,12 @@
             android:launchMode="singleTask"
              >
         </activity>
+         <activity
+            android:name="cn.zalezone.ui.LookHouseStatusActivity"
+            android:launchMode="singleTask"
+             >
+        </activity>
+         
     </application>
 
 </manifest>
