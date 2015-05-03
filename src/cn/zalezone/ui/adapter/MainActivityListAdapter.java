@@ -10,7 +10,6 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import cn.zalezone.domian.HouseInfo;
 import cn.zalezone.safehome_android.R;
 
 public class MainActivityListAdapter extends BaseAdapter{
@@ -52,6 +51,7 @@ public class MainActivityListAdapter extends BaseAdapter{
             convertView = inflater.inflate(R.layout.adapter_list_main_activity, null);
             viewHolder = new ViewHolder();
             viewHolder.mainListNameTextView = (TextView) convertView.findViewById(R.id.main_list_item);
+            viewHolder.mainIconImageView = (ImageView)convertView.findViewById(R.id.main_list_icon);
             convertView.setTag(viewHolder);
         }
         else {
@@ -62,6 +62,26 @@ public class MainActivityListAdapter extends BaseAdapter{
 //        viewHolder.name.setText(userInfo.getName());
         String  info = list.get(position);
         viewHolder.mainListNameTextView.setText(info);
+        switch (position) {
+            case 0:
+                viewHolder.mainIconImageView.setImageResource(R.drawable.property_verty_icon);
+                break;
+            case 1:
+                viewHolder.mainIconImageView.setImageResource(R.drawable.house_verty_icon);
+                break;
+            case 2:
+                viewHolder.mainIconImageView.setImageResource(R.drawable.house_register_icon);
+                break;
+            case 3:
+                viewHolder.mainIconImageView.setImageResource(R.drawable.inspection_icon);
+                break;
+            case 4:
+                viewHolder.mainIconImageView.setImageResource(R.drawable.house_search_icon);
+                break;
+            
+            default:
+                break;
+        }
         return convertView;
     }
 }

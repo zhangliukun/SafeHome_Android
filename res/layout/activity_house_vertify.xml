@@ -5,42 +5,7 @@
     android:background="@color/gray"
     android:orientation="vertical" >
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/black" >
-
-        <Button
-            android:id="@+id/back_button"
-            android:layout_width="90dp"
-            android:layout_height="44dp"
-            android:layout_centerVertical="true"
-            android:background="@null"
-            android:drawableLeft="@drawable/btn_back_normal"
-            android:drawablePadding="-20dp"
-            android:paddingLeft="12dp"
-            android:text="返回"
-            android:textColor="@color/white"
-            android:textSize="@dimen/navbar_button_text_size" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="房屋审核"
-            android:textColor="@color/white"
-            android:textSize="@dimen/navbar_button_text_size" />
-
-        <Button
-            android:id="@+id/main_activity_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:background="@drawable/home"
-            android:text="" />
-    </FrameLayout>
-
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,50 +16,16 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="小区名称:"
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/village_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="@color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="none"
                 android:textColor="@color/white" />
         </LinearLayout>
 
@@ -103,57 +34,29 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="套型："
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/houseType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="none"
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="@color/white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="面积："
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/propertionM3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="none"
                 android:textColor="@color/white" />
         </LinearLayout>
 
@@ -162,31 +65,23 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/textView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="租金："
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/rentIntention"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="none"
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/paymentWay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="付款方式"
                 android:textColor="@color/white" />
         </LinearLayout>
 
@@ -195,31 +90,91 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/textView18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="使用性质："
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/using_properties"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="none"
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/textView20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="出租类型："
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/lease_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="none"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="房屋类型："
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/building_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="朝向"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/orientation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="装修情况:"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/decoration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="出租间数："
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/rental_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
                 android:textColor="@color/white" />
         </LinearLayout>
 
@@ -228,7 +183,7 @@
             android:layout_height="wrap_content" >
 
             <CheckBox
-                android:id="@+id/checkBox1"
+                android:id="@+id/have_bed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -236,7 +191,7 @@
                 android:textColor="@color/white" />
 
             <CheckBox
-                android:id="@+id/checkBox2"
+                android:id="@+id/have_kitchen_bath"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -244,7 +199,7 @@
                 android:textColor="@color/white" />
 
             <CheckBox
-                android:id="@+id/checkBox3"
+                android:id="@+id/have_network"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -252,7 +207,7 @@
                 android:textColor="@color/white" />
 
             <CheckBox
-                android:id="@+id/checkBox4"
+                android:id="@+id/have_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -265,7 +220,7 @@
             android:layout_height="wrap_content" >
 
             <CheckBox
-                android:id="@+id/checkBox5"
+                android:id="@+id/have_refrigerator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -273,7 +228,7 @@
                 android:textColor="@color/white" />
 
             <CheckBox
-                android:id="@+id/checkBox6"
+                android:id="@+id/have_ac"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -281,7 +236,7 @@
                 android:textColor="@color/white" />
 
             <CheckBox
-                android:id="@+id/checkBox7"
+                android:id="@+id/have_washing_machine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -289,7 +244,7 @@
                 android:textColor="@color/white" />
 
             <CheckBox
-                android:id="@+id/checkBox8"
+                android:id="@+id/have_water_heater"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -302,18 +257,35 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/textView22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="地址:"
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/textView23"
+                android:id="@+id/house_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="none"
                 android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/building_add_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none" />
+
+            <TextView
+                android:id="@+id/floor_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none/none层" />
+
         </LinearLayout>
 
         <TextView
@@ -323,7 +295,7 @@
             android:textColor="@color/white" />
 
         <EditText
-            android:id="@+id/audit_opinion"
+            android:id="@+id/edit_opinion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"

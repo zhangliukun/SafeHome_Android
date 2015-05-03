@@ -11,12 +11,12 @@ import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import cn.zalezone.domian.HouseInfo;
+import cn.zalezone.domian.LeaseHouseInfo;
 import cn.zalezone.safehome_android.R;
 import cn.zalezone.ui.PropertyVerityActivity;
 
 public class HouseInfoVertifyListAdapter extends BaseAdapter{
-	private ArrayList<HouseInfo> list;           // 填充数据的list
+	private ArrayList<LeaseHouseInfo> list;           // 填充数据的list
     private Context             context;        // 上下文
     private LayoutInflater      inflater = null; // 用来导入布局
 
@@ -27,7 +27,7 @@ public class HouseInfoVertifyListAdapter extends BaseAdapter{
         Button verifyButton;
     }
 
-    public HouseInfoVertifyListAdapter(ArrayList<HouseInfo> list, Context context)// 构造器
+    public HouseInfoVertifyListAdapter(ArrayList<LeaseHouseInfo> list, Context context)// 构造器
     {
         this.context = context;
         this.list = list;
@@ -67,15 +67,15 @@ public class HouseInfoVertifyListAdapter extends BaseAdapter{
 //        UserInfo userInfo = list.get(position);
 //        viewHolder.alpha.setText(userInfo.getAlpha());
 //        viewHolder.name.setText(userInfo.getName());
-        final HouseInfo info = list.get(position);
-        viewHolder.houseNumberTextView.setText(info.getHouseNumber());
-        viewHolder.communityNameTextView.setText(info.getCommunity());
-        viewHolder.locationTextView.setText(info.getLocation());
+        final LeaseHouseInfo info = list.get(position);
+//        viewHolder.houseNumberTextView.setText(info.getHouseNumber());
+//        viewHolder.communityNameTextView.setText(info.getCommunity());
+//        viewHolder.locationTextView.setText(info.getLocation());
         viewHolder.verifyButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent propertyVerityIntent = new Intent(context, PropertyVerityActivity.class);
-				propertyVerityIntent.putExtra("house_number", info.getHouseNumber());
+				//propertyVerityIntent.putExtra("house_number", info.getHouseNumber());
 				context.startActivity(propertyVerityIntent);
 			}
 		});

@@ -11,24 +11,27 @@ import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import cn.zalezone.domian.HouseInfo;
+import cn.zalezone.domian.LeaseHouseInfo;
+import cn.zalezone.domian.LookHouseInfo;
 import cn.zalezone.safehome_android.R;
 import cn.zalezone.ui.LookHouseStatusActivity;
 import cn.zalezone.ui.PropertyVerityActivity;
 
 public class LookHouseRegisterListAdapter extends BaseAdapter{
-	private ArrayList<HouseInfo> list;           // 填充数据的list
+	private ArrayList<LookHouseInfo> list;           // 填充数据的list
     private Context             context;        // 上下文
     private LayoutInflater      inflater = null; // 用来导入布局
 
     private static class ViewHolder {
-        TextView  houseNumberTextView;
-        TextView  communityNameTextView;
+        TextView houseNumberTextView;
+        TextView communityNameTextView;
         TextView locationTextView;
-        Button verifyButton;
+        TextView buildingTextView;
+        TextView floorTextView;
+        Button   verifyButton;
     }
 
-    public LookHouseRegisterListAdapter(ArrayList<HouseInfo> list, Context context)// 构造器
+    public LookHouseRegisterListAdapter(ArrayList<LookHouseInfo> list, Context context)// 构造器
     {
         this.context = context;
         this.list = list;
@@ -59,25 +62,26 @@ public class LookHouseRegisterListAdapter extends BaseAdapter{
             viewHolder.houseNumberTextView = (TextView) convertView.findViewById(R.id.house_number);
             viewHolder.communityNameTextView = (TextView) convertView.findViewById(R.id.community_name);
             viewHolder.locationTextView = (TextView) convertView.findViewById(R.id.location);
-            viewHolder.verifyButton = (Button)convertView.findViewById(R.id.verify);
+            viewHolder.buildingTextView =(TextView)convertView.findViewById(R.id.building_info);
+            viewHolder.floorTextView = (TextView)convertView.findViewById(R.id.floor_info);
+            viewHolder.verifyButton = (Button) convertView.findViewById(R.id.verify);
             convertView.setTag(viewHolder);
         }
         else {   
             viewHolder = (ViewHolder) convertView.getTag();
         }
-//        UserInfo userInfo = list.get(position);
-//        viewHolder.alpha.setText(userInfo.getAlpha());
-//        viewHolder.name.setText(userInfo.getName());
-        final HouseInfo info = list.get(position);
-        viewHolder.houseNumberTextView.setText(info.getHouseNumber());
-        viewHolder.communityNameTextView.setText(info.getCommunity());
-        viewHolder.locationTextView.setText(info.getLocation());
+        final LookHouseInfo info = list.get(position);
+        
+        viewHolder.houseNumberTextView.setText(info.getHouseCode());
+        viewHolder.communityNameTextView.setText(info.getVillageName());
+        viewHolder.locationTextView.setText(info.getHouseAdd());
+        
         viewHolder.verifyButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent propertyVerityIntent = new Intent(context, LookHouseStatusActivity.class);
-				propertyVerityIntent.putExtra("house_number", info.getHouseNumber());
-				context.startActivity(propertyVerityIntent);
+			    Intent lookHouseIntent = new Intent(context, LookHouseStatusActivity.class);
+                lookHouseIntent.putExtra("lookHouseInfo", info);
+                context.startActivity(lookHouseIntent);
 			}
 		});
         return convertView;

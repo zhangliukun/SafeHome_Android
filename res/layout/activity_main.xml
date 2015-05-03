@@ -4,28 +4,19 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="80dp"
-            android:background="@drawable/title"
-			android:clickable="false"
-            android:text="" />
-
-        <Button
-            android:id="@+id/exit_button"
+        <ImageView
+            android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/exit"
-            android:layout_gravity="right|center"
-            android:focusable="true"
-            android:layout_marginRight="20dp"
-            android:text="" />
+			android:background="@drawable/main_title_bg"
+            />
 
-    </FrameLayout>
+    </LinearLayout>
 
     <ListView
         android:id="@+id/mainactivity_listview"
