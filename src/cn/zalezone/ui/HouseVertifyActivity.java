@@ -242,6 +242,10 @@ public class HouseVertifyActivity extends BaseActivity {
                     
                     new InsertVerifyComment(myHandler,RequestUrlInfo.HTTP_INSERT_HOUSE_VERIFY_COMMENT, requestJsonObject.toString()).start();
                    
+                    Intent houseIntent = new Intent(getApplicationContext(), HouseActivity.class);
+                    startActivity(houseIntent);
+                    finish();
+                    
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -277,6 +281,10 @@ public class HouseVertifyActivity extends BaseActivity {
                         
                         new InsertVerifyComment(myHandler,RequestUrlInfo.HTTP_INSERT_HOUSE_VERIFY_COMMENT, requestJsonObject.toString()).start();
                     
+                        Intent houseIntent = new Intent(getApplicationContext(), HouseActivity.class);
+                        startActivity(houseIntent);
+                        finish();
+                        
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

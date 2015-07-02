@@ -2,12 +2,16 @@ package cn.zalezone.domian;
 
 import java.util.Date;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 /**
 *
 * @author zhouc
 * 2015-03-18
 */
 
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class LeaseSatisfactionResult {
 	private Integer satisfactionResultId;
 

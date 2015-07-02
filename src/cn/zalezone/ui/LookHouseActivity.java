@@ -1,7 +1,5 @@
 package cn.zalezone.ui;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import org.apache.http.HttpResponse;
@@ -146,7 +144,7 @@ public class LookHouseActivity extends BaseActivity{
                 JSONObject jsonObject = new JSONObject();
                 try {
                     jsonObject.put("houseCode", houseCode);
-                    jsonObject.put("serviceCenterId", GlobalData.serviceCenterId);
+					jsonObject.put("serviceCenterId", GlobalData.serviceCenterId);
                     new PostForLeaseHouseList(myHandler,
                             RequestUrlInfo.HTTP_SEATCH_LOOK_HOUSE, jsonObject.toString()).start();
 

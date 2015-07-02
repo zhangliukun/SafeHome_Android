@@ -129,7 +129,7 @@ public class PropertyVerityActivity extends BaseActivity {
         }
 
         // 审核意见框
-        vertifyCommentEditText = (EditText) findViewById(R.id.audit_opinion);
+        vertifyCommentEditText = (EditText) findViewById(R.id.edit_opinion);
 
         // ActionBar
         actionBarBackButton = (Button) findViewById(R.id.actionbar_back_button);
@@ -191,6 +191,9 @@ public class PropertyVerityActivity extends BaseActivity {
                     requestJsonObject.put("isRead", 0);
                     
                     queryFromServer(requestJsonObject.toString());
+                    Intent propertyIntent = new Intent(getApplicationContext(), PropertyActivity.class);
+                    startActivity(propertyIntent);
+                    finish();
                    
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -226,6 +229,10 @@ public class PropertyVerityActivity extends BaseActivity {
                         requestJsonObject.put("isRead", 0);
                         
                         queryFromServer(requestJsonObject.toString());
+                        
+                        Intent propertyIntent = new Intent(getApplicationContext(), PropertyActivity.class);
+                        startActivity(propertyIntent);
+                        finish();
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

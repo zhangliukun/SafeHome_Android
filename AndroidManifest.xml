@@ -65,6 +65,27 @@
             android:launchMode="singleTask"
              >
         </activity>
+         <activity
+            android:name="cn.zalezone.ui.PatrolActivity"
+            android:launchMode="singleTask"
+             >
+        </activity>
+            <activity
+            android:name="cn.zalezone.ui.PatrolRecordActivity"
+            android:launchMode="singleTask"
+             >
+        </activity>
+        
+             <activity
+            android:name="cn.zalezone.ui.SearchActivity"
+            android:launchMode="singleTask"
+             >
+        </activity>
+            <activity
+            android:name="cn.zalezone.ui.SearchHouseStatusActivity"
+            android:launchMode="singleTask"
+             >
+        </activity>
         
          
          

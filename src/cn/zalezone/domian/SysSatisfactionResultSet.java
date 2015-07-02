@@ -1,5 +1,7 @@
 package cn.zalezone.domian;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 
 /***
  * 
@@ -8,6 +10,8 @@ package cn.zalezone.domian;
  * @param 系统-系统参数  t_sys_satisfaction_result_set
  *
  */
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class SysSatisfactionResultSet {
 	private Integer satisfactionResultSetId;//系统参数ID
 	

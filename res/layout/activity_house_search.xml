@@ -8,6 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:orientation="vertical" >
 
         <LinearLayout
@@ -15,10 +16,10 @@
             android:layout_height="wrap_content" >
 
             <ImageView
-                android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/communite_icon" />
+                android:src="@drawable/property_person_icon"
+                android:visibility="invisible" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -39,10 +40,9 @@
             android:layout_height="wrap_content" >
 
             <ImageView
-                android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/communite_icon"
+                android:src="@drawable/property_person_icon"
                 android:visibility="invisible" />
 
             <TextView
@@ -77,10 +77,9 @@
             android:layout_height="wrap_content" >
 
             <ImageView
-                android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/communite_icon"
+                android:src="@drawable/property_person_icon"
                 android:visibility="invisible" />
 
             <TextView
@@ -109,10 +108,9 @@
             android:layout_height="wrap_content" >
 
             <ImageView
-                android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/communite_icon"
+                android:src="@drawable/property_person_icon"
                 android:visibility="invisible" />
 
             <TextView
@@ -147,10 +145,9 @@
             android:layout_height="wrap_content" >
 
             <ImageView
-                android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/communite_icon"
+                android:src="@drawable/property_person_icon"
                 android:visibility="invisible" />
 
             <TextView
@@ -185,10 +182,9 @@
             android:layout_height="wrap_content" >
 
             <ImageView
-                android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/communite_icon"
+                android:src="@drawable/property_person_icon"
                 android:visibility="invisible" />
 
             <TextView
@@ -223,10 +219,9 @@
             android:layout_height="wrap_content" >
 
             <ImageView
-                android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/communite_icon"
+                android:src="@drawable/property_person_icon"
                 android:visibility="invisible" />
 
             <CheckBox
@@ -267,10 +262,9 @@
             android:layout_height="wrap_content" >
 
             <ImageView
-                android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/communite_icon"
+                android:src="@drawable/property_person_icon"
                 android:visibility="invisible" />
 
             <CheckBox
@@ -311,10 +305,10 @@
             android:layout_height="wrap_content" >
 
             <ImageView
-                android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/house_number_icon" />
+                android:src="@drawable/property_person_icon"
+                android:visibility="invisible" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -335,10 +329,9 @@
             android:layout_height="wrap_content" >
 
             <ImageView
-                android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/communite_icon"
+                android:src="@drawable/property_person_icon"
                 android:visibility="invisible" />
 
             <TextView
@@ -357,61 +350,249 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#666666" >
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/light_gray"
-            android:orientation="vertical" >
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/property_person_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="14dp"
-                android:paddingLeft="19dp"
-                android:paddingTop="14dp"
-                android:text="审核意见:"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:text="产权人:"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/property_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
+                android:textColor="@color/black" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/edit_opinion"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:lines="4" >
+            android:layout_height="wrap_content" >
 
-            <requestFocus />
-        </EditText>
-    </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/property_person_icon"
+                android:visibility="invisible" />
 
-     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/light_gray"
-        android:gravity="center|top"
-        android:paddingTop="20dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="产权证号："
+                android:textColor="@color/black" />
 
-        <Button
-            android:id="@+id/access_button"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:background="@color/this.green"
-            android:padding="5dp"
-            android:textColor="@color/white"
-            android:layout_marginRight="14dp"
-            android:text="通过" />
+            <TextView
+                android:id="@+id/property_cert_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
+                android:textColor="@color/black" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/not_access_button"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:background="@color/red"
-            android:textColor="@color/white"
-            android:padding="5dp"
-            android:text="不通过" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/property_person_icon"
+                android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="身份证号:"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/identification_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/phone_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="电话:"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/telephone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/phone_icon"
+                android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="出租人："
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/leaser_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/phone_icon"
+                android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="出租人电话:"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/leaser_person_telephone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/phone_icon"
+                android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="承租人:"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tenant_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/phone_icon"
+                android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="承租人电话:"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tenant_person_telephone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/phone_icon"
+                android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="承租开始日："
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/start_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/phone_icon"
+                android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="承租结束日:"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/end_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="none"
+                android:textColor="@color/black" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

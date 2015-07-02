@@ -76,7 +76,7 @@ public class MainActivityListAdapter extends BaseAdapter{
                 viewHolder.mainIconImageView.setImageResource(R.drawable.inspection_icon);
                 break;
             case 4:
-                viewHolder.mainIconImageView.setImageResource(R.drawable.house_search_icon);
+                viewHolder.mainIconImageView.setImageResource(R.drawable.search_big_icon);
                 break;
             
             default:

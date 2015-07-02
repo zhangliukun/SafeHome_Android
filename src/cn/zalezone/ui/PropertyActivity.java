@@ -92,7 +92,25 @@ public class PropertyActivity extends BaseActivity {
                 switch (msg.what) {
                    
                     case OperationState.GET_DATA_FINISHED:
+                        
+                        JSONArray jsonArray;
+                        try {
+                            jsonArray = new JSONArray((String)msg.obj);
+                            //清除原来的List列表中的数据
+                            LeaseHouseInfolist.clear();
+                            
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                LeaseHouseInfo info = JsonHelper.JsonToObject(jsonObject.toString(), 
+                                        LeaseHouseInfo.class);
+                                LeaseHouseInfolist.add(info);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        
                         listAdapter.notifyDataSetChanged();
+                        break;
                     default:
                         break;
                 }
@@ -218,20 +236,11 @@ public class PropertyActivity extends BaseActivity {
     
     //这里的list在数据量大时可能会报错，具体待测试
     protected void verifyData(String data) throws Exception {
-        JSONArray jsonArray = new JSONArray(data);
-
-        //清除原来的List列表中的数据
-        LeaseHouseInfolist.clear();
         
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject jsonObject = jsonArray.getJSONObject(i);
-            LeaseHouseInfo info = JsonHelper.JsonToObject(jsonObject.toString(), 
-                    LeaseHouseInfo.class);
-            LeaseHouseInfolist.add(info);
-        }
         
         Message msg = new Message();
         msg.what = OperationState.GET_DATA_FINISHED;
+        msg.obj = data;
         myHandler.sendMessage(msg);
         
         // List list = (List) JSONArray.toCollection(jsonArray, LeaseHouseInfo.class);

@@ -57,7 +57,7 @@ public class LookHouseRegisterListAdapter extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.adapter_list_lookhouse, null);
+            convertView = inflater.inflate(R.layout.adapter_list_house_property, null);
             viewHolder = new ViewHolder();
             viewHolder.houseNumberTextView = (TextView) convertView.findViewById(R.id.house_number);
             viewHolder.communityNameTextView = (TextView) convertView.findViewById(R.id.community_name);
@@ -75,6 +75,8 @@ public class LookHouseRegisterListAdapter extends BaseAdapter{
         viewHolder.houseNumberTextView.setText(info.getHouseCode());
         viewHolder.communityNameTextView.setText(info.getVillageName());
         viewHolder.locationTextView.setText(info.getHouseAdd());
+        viewHolder.buildingTextView.setText(info.getBuildingNo()+"幢"+info.getBuildingUnit()+"单元"+info.getBuildingRoom()+"室");
+        viewHolder.floorTextView.setText(info.getFloorNum()+"/"+info.getFloorCnt()+"层");
         
         viewHolder.verifyButton.setOnClickListener(new OnClickListener() {
 			@Override

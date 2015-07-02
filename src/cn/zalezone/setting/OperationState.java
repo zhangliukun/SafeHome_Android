@@ -16,4 +16,5 @@ public class OperationState {
     public static final int        GET_LOOKHOUSE_DATA_FINISHED  = 7;   //获取数据完成
     public static final int        INSERT_DATA_SUCCESS = 5;  //插入操作成功
     public static final int        INSERT_DATA_FAILED = 6;     //插入操作失败
+    public static final int        GET_USER_INFO_FINISHED =8;//获取租赁人和承租人的用户名和手机号
 }

@@ -4,6 +4,8 @@ package cn.zalezone.domian;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 
 /***
  * 
@@ -12,6 +14,8 @@ import java.util.Date;
  * @param 基础
  *            -用户表 t_base_user
  */
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class BaseUser implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -3,11 +3,15 @@ package cn.zalezone.domian;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 /**
 *
 * @author zhouc
 * 2015-03-18
 */
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class LeaseHouseInfo implements Serializable{
     
 	/**

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_gray"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:text="房屋编号"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" >
+
+            <EditText
+                android:id="@+id/edit_search_homenumber"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/search_smaller_icon"
+                android:ems="10"
+                android:paddingLeft="8dp" >
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/button_search"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#d4cece"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="查询" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_gray"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:text="小区名称"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" >
+
+            <EditText
+                android:id="@+id/edit_search_villagename"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/search_smaller_icon"
+                android:ems="10"
+                android:paddingLeft="8dp" >
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                  android:background="@color/light_gray"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="查询"
+                android:textColor="@color/light_gray"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_gray"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:text="地址信息"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" >
+
+            <EditText
+                android:id="@+id/edit_search_addressinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/search_smaller_icon"
+                android:ems="10"
+                android:paddingLeft="8dp" >
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                  android:background="@color/light_gray"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="查询"
+                android:textColor="@color/light_gray"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/home_property_info_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#ffffff"
+        android:dividerHeight="1px" >
+    </ListView>
+
+</LinearLayout>

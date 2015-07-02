@@ -1,11 +1,14 @@
 package cn.zalezone.ui;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import cn.zalezone.domian.GlobalData;
 import cn.zalezone.domian.LeaseHouseInfo;
 import cn.zalezone.domian.LeaseSatisfactionResult;
 import cn.zalezone.domian.LookHouseInfo;
@@ -15,6 +18,7 @@ import cn.zalezone.setting.OperationState;
 import cn.zalezone.setting.RequestUrlInfo;
 import cn.zalezone.ui.adapter.LookHouseCodeNameAdapter;
 import cn.zalezone.util.JsonHelper;
+import cn.zalezone.web.InsertVerifyComment;
 import cn.zalezone.web.PostForLeaseHouseList;
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,6 +31,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LookHouseStatusActivity extends BaseActivity {
 
@@ -86,9 +91,11 @@ public class LookHouseStatusActivity extends BaseActivity {
                                 SysSatisfactionResultSet info = JsonHelper.JsonToObject(jsonObject.toString(),
                                         SysSatisfactionResultSet.class);
                                 LeaseSatisfactionResult leaseSatisfactionResult = new LeaseSatisfactionResult();
+                                leaseSatisfactionResult.setIntentionAppointId(lookHouseInfo.getIntentionAppointId());
                                 leaseSatisfactionResult.setIntentionAppointCd(lookHouseInfo.getIntentionAppointCd());
                                 leaseSatisfactionResult.setSatisfactionResultCd(info.getSatisfactionResultCd());
                                 leaseSatisfactionResult.setSatisfactionResultNm(info.getSatisfactionResultNm());
+                                leaseSatisfactionResult.setSatisfactionFlag("00");
                                 arrayList.add(leaseSatisfactionResult);
                             }
                         } catch (Exception e) {
@@ -152,6 +159,98 @@ public class LookHouseStatusActivity extends BaseActivity {
                 Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(mainIntent);
                 finish();
+            }
+        });
+        
+      //初始化Button
+        accessButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String comment = vertifyCommentEditText.getText().toString();
+                JSONObject requestJsonObject = new JSONObject();
+                try {
+                    SimpleDateFormat sdf =   new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    String str = sdf.format(new Date());
+                    
+                    String satisfactionListString = JsonHelper.ObjectToJson(arrayList);
+                    
+                    //看房预约编号和房屋编号
+                    requestJsonObject.put("intentionAppointCd", lookHouseInfo.getIntentionAppointCd());
+                    requestJsonObject.put("houseCode", lookHouseInfo.getHouseCode());
+                    
+                    //满意度jsonList列表
+                    requestJsonObject.put("satisfactionList", satisfactionListString);
+                    //看房登记时间,与实际看房时间同
+                    requestJsonObject.put("sRRTime", str);
+                    //发给服务器让之判断是否成交
+                    requestJsonObject.put("leaseIsDeal", "1");
+                    //看房登记备注
+                    requestJsonObject.put("memo", comment);
+                    //所属站点ID
+                    requestJsonObject.put("serviceCenterId", GlobalData.serviceCenterId);
+                    //登记人Id
+                    requestJsonObject.put("userId", GlobalData.userId);
+                    requestJsonObject.put("messageContent","房屋编号为"+lookHouseInfo.getHouseCode()+"的看房信息等待租赁处理。");
+                    requestJsonObject.put("isRead", 0);
+                    
+                    new InsertVerifyComment(myHandler,RequestUrlInfo.HTTP_LOOKHOUSE_DEAL, requestJsonObject.toString()).start();
+                   
+                    Intent LookHouseIntent = new Intent(getApplicationContext(), LookHouseActivity.class);
+                    startActivity(LookHouseIntent);
+                    finish();
+                    
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+        notAccessButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String comment = vertifyCommentEditText.getText().toString();
+                if (!comment.equals("")) {
+                    
+                    JSONObject requestJsonObject = new JSONObject();
+                    try {
+                        SimpleDateFormat sdf =   new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        String str = sdf.format(new Date());
+                        
+                      //看房预约编号和房屋编号
+                        requestJsonObject.put("intentionAppointCd", lookHouseInfo.getIntentionAppointCd());
+                        requestJsonObject.put("houseCode", lookHouseInfo.getHouseCode());
+                        
+                        //满意度jsonList列表
+                        String satisfactionListString = JsonHelper.ObjectToJson(arrayList);
+                        requestJsonObject.put("satisfactionList", satisfactionListString);
+                        //看房登记时间,与实际看房时间同
+                        requestJsonObject.put("sRRTime", str);
+                        //发给服务器让之判断是否成交
+                        requestJsonObject.put("leaseIsDeal", "2");
+                        //看房登记备注
+                        requestJsonObject.put("memo", comment);
+                        //所属站点ID
+                        requestJsonObject.put("serviceCenterId", GlobalData.serviceCenterId);
+                        //登记人Id
+                        requestJsonObject.put("userId", GlobalData.userId);
+                        requestJsonObject.put("messageContent","房屋编号为"+lookHouseInfo.getHouseCode()+"的看房信息等待租赁处理。");
+                        requestJsonObject.put("isRead", 0);
+                        
+                        
+                        new InsertVerifyComment(myHandler,RequestUrlInfo.HTTP_LOOKHOUSE_DEAL, requestJsonObject.toString()).start();
+                       
+                        Intent LookHouseIntent = new Intent(getApplicationContext(), LookHouseActivity.class);
+                        startActivity(LookHouseIntent);
+                        finish();
+                        
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "请输入不成交的意见", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

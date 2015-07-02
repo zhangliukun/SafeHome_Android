@@ -67,9 +67,6 @@ public class LoginActivity extends BaseActivity {
     // httpClient
     HttpClient               httpClient;
     HttpPost                 httpPost;
-    
-
-    private int              isCheckBoxChecked = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,34 +92,37 @@ public class LoginActivity extends BaseActivity {
         actionBarBackButton.setVisibility(View.GONE);
         actionBarTextView.setText("登录");
         actionBarHomeButton.setVisibility(View.GONE);
+        
+        editName.setText(sharedPreferences.getString("userName", ""));
+        editPassword.setText(sharedPreferences.getString("userPassword", ""));
 
         // 判断文本框是否保存了值
-        if (isCheckBoxChecked == 1) {
-            editName.setText(sharedPreferences.getString("userName", ""));
-            editPassword.setText(sharedPreferences.getString("userPassword", ""));
-            saveInfoCheckBox.setChecked(true);
-        }
-
-        saveInfoCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    isCheckBoxChecked = 1;
-                    editor.putInt("isChecked", 1);
-                    editor.putString("userName", editName.getText().toString());
-                    editor.putString("userPassword", editPassword.getText().toString());
-                    editor.commit();
-                }
-                else {
-                    isCheckBoxChecked = 0;
-                    editor.putInt("isChecked", 0);
-                    editor.putString("userName", "");
-                    editor.putString("userPassword", "");
-                    editor.commit();
-                }
-            }
-        });
+        // if (isCheckBoxChecked == 1) {
+        // editName.setText(sharedPreferences.getString("userName", ""));
+        // editPassword.setText(sharedPreferences.getString("userPassword", ""));
+        // saveInfoCheckBox.setChecked(true);
+        // }
+        //
+        // saveInfoCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        //
+        // @Override
+        // public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        // if (isChecked) {
+        // isCheckBoxChecked = 1;
+        // editor.putInt("isChecked", 1);
+        // editor.putString("userName", editName.getText().toString());
+        // editor.putString("userPassword", editPassword.getText().toString());
+        // editor.commit();
+        // }
+        // else {
+        // isCheckBoxChecked = 0;
+        // editor.putInt("isChecked", 0);
+        // editor.putString("userName", "");
+        // editor.putString("userPassword", "");
+        // editor.commit();
+        // }
+        // }
+        // });
 
         loginButton.setOnClickListener(new OnClickListener() {
 
@@ -133,12 +133,16 @@ public class LoginActivity extends BaseActivity {
 
                 String name = editName.getText().toString();
                 String password = editPassword.getText().toString();
-                
-                //保存变量值
-                GlobalData.loginId =name;
-                GlobalData.loginPwd=password;
-                
-                //检验用户名密码
+
+                // 保存变量值
+                GlobalData.loginId = name;
+                GlobalData.loginPwd = password;
+
+                editor.putString("userName", name);
+                editor.putString("userPassword", password);
+
+                GlobalData.isAutoStart = 1;
+                // 检验用户名密码
                 checkLoginInfoFromServer(name, password);
 
                 // Intent mainIntent = new Intent(getApplicationContext(),
@@ -147,6 +151,10 @@ public class LoginActivity extends BaseActivity {
                 // finish();
             }
         });
+        // 自动启动程序
+        if (GlobalData.isAutoStart == 1) {
+            loginButton.performClick();
+        }
 
         myHandler = new Handler() {
 
@@ -236,15 +244,15 @@ public class LoginActivity extends BaseActivity {
 
     protected void verifyData(String data) {
         Message msg = new Message();
-//        if (data.equals("access")) {
-//            Log.d(TagInfo.HTTP_DATA, "login successfully");
-//            msg.what = LOGIN_SUCCESS;
-//        }
-        if (data.equals("incorrect"))  {
+        // if (data.equals("access")) {
+        // Log.d(TagInfo.HTTP_DATA, "login successfully");
+        // msg.what = LOGIN_SUCCESS;
+        // }
+        if (data.equals("incorrect")) {
             Log.d(TagInfo.HTTP_DATA, "login failed");
             msg.what = OperationState.LOGIN_FAILED;
         }
-        else if(data.equals("no_access")){
+        else if (data.equals("no_access")) {
             Log.d(TagInfo.HTTP_DATA, "no access");
             msg.what = OperationState.NOACCESS_LOGIN;
         }
@@ -270,8 +278,8 @@ public class LoginActivity extends BaseActivity {
     @Override
     public void initData() {
         sharedPreferences = getSharedPreferences("SafeHome", MODE_WORLD_READABLE);
-        isCheckBoxChecked = sharedPreferences.getInt("isChecked", 0);
         editor = sharedPreferences.edit();
+        
     }
 
 }

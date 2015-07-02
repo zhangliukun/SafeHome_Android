@@ -4,5 +4,16 @@
     <string name="app_name">SafeHome_Android</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="none">none</string>
+    <string name="villagename">小区名称:</string>
+    <string name="leaseusername">出租人:</string>
+    <string name="telephone">电话:</string>
+    <string name="tenantusername">求租人:</string>
+    <string name="houseadd">地址:</string>
+    <string name="floor_info">none/none层</string>
+    <string name="recordcontent">记录内容</string>
+    <string name="savecontent">成交</string>
+    <string name="recond_content">输入巡查记录的意见</string>
+    <string name="housecode">房屋编号:</string>
 
 </resources>
